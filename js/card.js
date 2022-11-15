@@ -41,13 +41,13 @@ console.log (elemCardsContainer)
 const card1 = new Card(
             'celular',
             'iphone 7',
-            'img/productos/iphone-x.jpg',
+            'img/productos/iphone-14.jpg',
     )
 
     const card2 = new Card(
         'celular',
         'iphone 8',
-        'img/productos/iphone-xr.jpg',
+        'img/productos/iphone-13a.jpg',
     )
 
     const card3 = new Card(
@@ -89,7 +89,7 @@ const card1 = new Card(
     const card9 = new Card(
         'celular',
         'iphone 14 pro',
-        'imagen del celular',
+        'img/productos/iphone-14-pro.jpg',
     )
 
 
@@ -119,7 +119,7 @@ const card1 = new Card(
 
     console.log(cards)
 
-    card1.appendTo(elemCardsContainer)
+    /* card1.appendTo(elemCardsContainer)
     card2.appendTo(elemCardsContainer)
     card3.appendTo(elemCardsContainer)
     card4.appendTo(elemCardsContainer)
@@ -127,4 +127,8 @@ const card1 = new Card(
     card6.appendTo(elemCardsContainer)
     card7.appendTo(elemCardsContainer)
     card8.appendTo(elemCardsContainer)
-    card9.appendTo(elemCardsContainer)
+    card9.appendTo(elemCardsContainer) */
+
+    for(const unaCard of cards) {
+        unaCard.appendTo(elemCardsContainer)
+    }
