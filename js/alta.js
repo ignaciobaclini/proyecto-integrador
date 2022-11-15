@@ -1,13 +1,19 @@
 const productos = []
 const camposValidos = [false, false, false, false, false, false, false]
 
+
 const inputs = document.querySelectorAll('input')
 const form = document.querySelector('form')
 const button = document.querySelector('button')
 
+button.disabled = true
+
 console.log(inputs, form, button)
 
 const setCustomValidityJS = () => {
+        let divs = document.querySelectorAll('form div')
+        divs[index].innerHTML = mensaje
+        divs[index].style.display = mensaje ? 'block' : 'none'
 
 }
 
@@ -57,11 +63,45 @@ const regExpValidar = [
 
 inputs.forEach((input, index) => {
         input.addEventListener('input',() => {
-            validar(input.value, regExpValidar[index])
+            validar(input.value, regExpValidar[index], index)
         })
 })
 
+form.addEventListener('sumbit', e => {
+        e.preventDefault()
+
+        const producto = {
+                nombre: inputs[0].value,
+                precio: inputs[1].value,
+                stock: inputs[2].value,
+                marca: inputs[3].value,
+                categoria: inputs[4].value,
+                detalles: inputs[5].value,
+                foto: inputs[6].value,
+                envio: inputs[7].checked
+        }
+
+        inputs.forEach(input => input.value = '')
+
+        productos.push(producto)
+
+        button.disabled = true
+        console.log (productos)
+
+        renderProdsObjetos()
+})
+
+
 const renderProdsObjetos = () => {
+          let html = ''
+          for (let i = 0; i < productos.length; i++) {
+                const element = array[i];
+                html += `<p>${JSON.stringify(productos[i])}</p>`
+          } 
+          document.getElementById('listado-productos').innerHTML = html  
+
+
+
 
 }
 
