@@ -3,19 +3,19 @@ const camposValidos = [false, false, false, false, false, false, false, false]
 
 
 const inputs = document.querySelectorAll('.form-inputs')
-const form = document.querySelector('form')
+const form = document.querySelector('.formulario-alta')
 const button = document.querySelector('button')
 
 button.disabled = true
 
-console.log(inputs[6], form, button)
+console.log(inputs, form, button)
 
 const setCustomValidityJS = (mensaje, index) => {
-        let divs = document.querySelectorAll('form div')
+        let divs = document.querySelectorAll('.form__div')
         divs[index].innerHTML = mensaje
         divs[index].style.display = mensaje ? 'block' : 'none'
 
-}
+}  
 
 const algunCampoValido = () => {
         let valido = 
@@ -66,7 +66,7 @@ inputs.forEach((input, index) => {
         })
 })
 
-form.addEventListener('sumbit', e => {
+form.addEventListener('submit', e => {
         e.preventDefault()
 
         const producto = {
@@ -87,14 +87,16 @@ form.addEventListener('sumbit', e => {
         button.disabled = true
         console.log (productos)
 
-        renderProdsObjetos()
+        //renderProdsObjetos()
+
+        renderProdsTemplateString() 
 })
 
 
 const renderProdsObjetos = () => {
           let html = ''
           for (let i = 0; i < productos.length; i++) {
-                const element = array[i];
+                const element = productos[i];
                 html += `<p>${JSON.stringify(productos[i])}</p>`
           } 
           document.getElementById('listado-productos').innerHTML = html  
@@ -105,6 +107,54 @@ const renderProdsObjetos = () => {
 }
 
 const renderProdsTemplateString = () => {
+        let html = ''
+        
+        html += '<table>'
+        console.log(html)
+
+        html +=  ` 
+             <tr>
+                <th>nombre</th>
+                <th>precio</th>
+                <th>stock</th>
+                <th>marca</th>
+                <th>categoria</th>
+                <th>detalles</th>
+                <th>foto</th>
+                <th>envio</th>
+             </tr> 
+        `
+        for (let i = 0; i > productos.length; i++) {
+                let producto = productos[i]
+                console.log(producto)
+
+                html += 
+                `
+
+                   <tr>
+                        <th>${producto.nombre}</th>
+                        <th>${producto.precio}</th>
+                        <th>${producto.stock}</th>
+                        <th>${producto.marca}</th>
+                        <th>${producto.categoria}</th>
+                        <th>${producto.detalles}</th>
+                        <th>${producto.foto}</th>
+                        <th>${producto.envio}</th>
+                   </tr> 
+                
+
+                `
+
+        }
+
+
+        html += '</table>'
+
+        document.getElementById('listado-productos').innerHTML = html
+        
+        
+      
 
 }
+
 

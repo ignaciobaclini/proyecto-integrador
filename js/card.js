@@ -9,6 +9,22 @@ function Card(heading, description, image) {
         card.classList.add('card')
         card.href = 'https://sony.com'
 
+        let that = this 
+
+        card.addEventListener('click', function (e){
+            e.preventDefault()
+            console.log(this)
+
+            let nuevoItemCarrito = document.createElement('div')
+            nuevoItemCarrito.classList.add('carrito__item')
+            nuevoItemCarrito.innerHTML = that.heading
+            console.log(nuevoItemCarrito)
+
+            elemSectionCarrito.append(nuevoItemCarrito)
+        })
+
+
+
     card.innerHTML = `<article class="card__article">
                 <div class="card__image-container">
                 <img
