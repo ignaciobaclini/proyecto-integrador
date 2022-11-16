@@ -1,16 +1,16 @@
 const productos = []
-const camposValidos = [false, false, false, false, false, false, false]
+const camposValidos = [false, false, false, false, false, false, false, false]
 
 
-const inputs = document.querySelectorAll('input')
+const inputs = document.querySelectorAll('.form-inputs')
 const form = document.querySelector('form')
 const button = document.querySelector('button')
 
 button.disabled = true
 
-console.log(inputs, form, button)
+console.log(inputs[6], form, button)
 
-const setCustomValidityJS = () => {
+const setCustomValidityJS = (mensaje, index) => {
         let divs = document.querySelectorAll('form div')
         divs[index].innerHTML = mensaje
         divs[index].style.display = mensaje ? 'block' : 'none'
@@ -30,14 +30,13 @@ const algunCampoValido = () => {
 
         return !valido
       
-
 }
 
 
-
 const validar = (valor, validador, index) => {
-
+                console.log(valor, validador, index)
         if (!validador.test(valor)) {
+
              setCustomValidityJS('este campo no es valido', index)
              camposValidos[index] = false     
              button.disabled = true
@@ -58,7 +57,7 @@ const regExpValidar = [
         /^.+$/,  // regexp categoria
         /^.+$/,  // regexp detalles
         /^.+$/,  // regexp foto
-
+        /^.+$/,
 ]    
 
 inputs.forEach((input, index) => {
