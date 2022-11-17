@@ -21,7 +21,7 @@ function start() {
                     initAlta()
                 }
                 else if(id === 'inicio') {
-                    initCard()
+                    initInicio()
                 }
                 else if(id === 'nosotros') {
                     initNosotros()
@@ -48,5 +48,31 @@ function start() {
                 })
             }
 
+            const cargarPlantillas = () => {
+                let id = location.hash.slice(1) || 'inicio'
+                cargarPlantilla(id)
+
+
+                const links = document.querySelectorAll('header nav a')
+                console.log(links)
+
+                links.forEach(link => {
+                    link.addEventListener('click', e => {
+                        e.preventDefault()
+
+                        let id = link.id
+                        console.log(id)
+                        location.hash = id
+                    })
+                })
+
+                window.addEventListener('hashchange', () =>{
+                    console.log ('cambio la url')
+
+                    let id = location.hash.slice(1) || 'inicio'
+                    cargarPlantilla(id)
+                })
+            }
+            cargarPlantillas()
 }
 start()
