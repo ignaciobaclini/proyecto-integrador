@@ -14,16 +14,16 @@
       <nav class="nav-bar">
         <ul class="nav-bar__nav-list">
           <li class="nav-bar__nav-item">
-            <a href="index.html" class="nav-bar__nav-link"> Inicio </a>
+            <a href="index.html" id="inicio" class="nav-bar__nav-link"> Inicio </a>
           </li>
           <li class="nav-bar__nav-item">
-            <a href="alta.html" class="nav-bar__nav-link"> Alta </a>
+            <a href="alta.html" id="alta" class="nav-bar__nav-link"> Alta </a>
           </li>
           <li class="nav-bar__nav-item">
-            <a href="contacto.html" class="nav-bar__nav-link"> Contacto </a>
+            <a href="contacto.html" id="contacto" class="nav-bar__nav-link"> Contacto </a>
           </li>
           <li class="nav-bar__nav-item">
-            <a href="nosotros.html" class="nav-bar__nav-link"> Nosotros </a>
+            <a href="nosotros.html" id="nosotros" class="nav-bar__nav-link"> Nosotros </a>
           </li>
         </ul>
       </nav>
@@ -48,25 +48,27 @@
       <!-- search-bar -->
     </header>
     <!-- <header> -->
-    <main>
-      
+
       <div class="section-carrito"></div>
+      
+    <main></main>
 
+    <footer></footer>
 
-      <section class="section-cards">
-        <header class="section-cards__header">
-          <h1>Lorem ipsum dolor sit amet.</h1>
-          <p>Se encontraron X productos</p>
-        </header>
+    <!-- codigo de librerias -->
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@4.7.7/dist/handlebars.js"></script>
 
-        <div class="cards-container"></div>
-      </section>
-      <!-- section-cards -->
-    </main>
-
-
-    <script src="js/main.js"></script>
+    
+     <!-- codigo del plantillas -->
+    <script src="js/alta.js"></script>
+    <script src="js/nosotros.js"></script>
+    <script src="js/contacto.js"></script>
     <script src="js/card.js"></script>
+    
+    <!-- codigo del carrito -->
     <script src="js/carrito.js"></script>
+
+      <!-- codigo de arranque -->
+    <script src="js/main.js"></script>
   </body>
 </html>
