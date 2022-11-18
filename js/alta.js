@@ -113,7 +113,7 @@ function initAlta() {
         
         button.disabled = true
         
-        const camposValidos = [false, false, false, false, false, false, false, false]
+         camposValidos = [false, false, false, false, false, false, false, false]
         
         inputs.forEach((input, index) => {
           if(input.type != 'checkbox') {

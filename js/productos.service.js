@@ -5,4 +5,22 @@ async function obtenerProductosService() {
     return productos
 
 }
-obtenerProductosService()
+
+async function guardarProductoService(producto) {
+    const productoGuardado = await http.post(this.URL_PRODUCTOS, producto)
+    // console.log(productoGuardado)
+    return productoGuardado
+}
+
+async function actualizarProductoService(id, producto) {
+    const productoActualizado = await http.put(this.URL_PRODUCTOS, id, producto)
+    // console.log(productoActualizado)
+    return productoActualizado
+}
+
+async function borrarProductoService(id) {
+    const productoBorrado = await http.del(this.URL_PRODUCTOS, id)
+    // console.log(productoBorrado)
+    return productoBorrado
+}
+
