@@ -66,7 +66,12 @@ const renderProds = () => {
                 let template = Handlebars.compile(plantillaHbs)
                 console.log(template)
 
-                let html = template({productos: productos})
+                let html = template(
+                        {
+                                productos: productos,
+                                validos: !algunCampoValido()
+                        }
+                )
                 console.log(html)
                 document.getElementById('listado-productos').innerHTML = html
               }  
