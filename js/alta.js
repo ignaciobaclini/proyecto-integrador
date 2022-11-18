@@ -90,38 +90,16 @@ function leerProductoIngresado() {
 }
 
         function limpiarFormulario() { 
-                inputs.forEach((input, index) => {
-
-                inputs.forEach(input => input.value = '')             
-
-                input.addEventListener('input',() => {
-                validar(input.value, regExpValidar[index], index)
+                inputs.forEach(input => {
+                
+                 if (input.type != "checkbox") input.value = ""
+                else if (input.type == "checkbox") input.checked = false
                 })
-        })
+
+                
         button.disabled = true
         camposValidos = [false, false, false, false, false, false, false, false]
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -137,27 +115,25 @@ function initAlta() {
         
         const camposValidos = [false, false, false, false, false, false, false, false]
         
-        
+        inputs.forEach((input, index) => {
+          if(input.type != 'checkbox') {
+                input.addEventListener('input', () => {
+                        validar (input.value, regExpValidar[index], index)
+                })
+          }
+
+        })
         
 
         form.addEventListener('submit', e => {
                 e.preventDefault()
-        
-              
-                
-        
-                productos.push(producto)
-        
-                
-                console.log (productos)
-        
-                
-                
-                renderProds()
+
+                //guardarProducto()
+    
         })
-        
-        
-        
+        obtenerproductos()
+}        
+   
         
         
         
@@ -173,10 +149,7 @@ function initAlta() {
         
         
         
-        renderProds()
-
-
-    } 
+     
     
 
 
