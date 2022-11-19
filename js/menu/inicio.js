@@ -15,19 +15,21 @@ async function renderPlantillaListado(listado) {
     }
 }
 
+function agregarCarrito(e, id, ref) { 
+    e.preventDefault()
+    //console.log(id)
+    //console.log(ref)
 
-function agregarCarrito() {
-
+    const producto = productoController.productos.find(producto => producto.id == id)
+    carritoController.agregarAlCarrito(producto)
 }
 
 async function initInicio() {
-     
     console.warn('initInicio()')
 
     const productos = await productoController.obtenerProductos()
+
     await renderPlantillaListado(productos)
 
     document.querySelector('.section-cards__header p').innerHTML = `Se encontraron ${productos.length} productos`
-
-
 }
