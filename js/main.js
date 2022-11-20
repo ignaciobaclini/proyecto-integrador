@@ -95,3 +95,16 @@ class Main {
 
 const main = new Main()
 main.start()
+
+
+const footer = document.querySelector('footer')
+
+footer.innerHTML = `
+<h2>SEGUINOS</h2>
+        <div>
+            <ul class="redes">
+                <li><a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer"><img src="img/productos/facebook.svg" alt="facebook"></a></li>
+                <li><a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer"><img src="img/productos/instagram.svg" alt="instagram"></a></li>
+            </ul>
+        </div>
+`
