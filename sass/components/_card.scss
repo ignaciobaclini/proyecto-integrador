@@ -11,18 +11,17 @@
     max-width: 300px;
     height: 400px;
     overflow: hidden;
-    box-shadow: 1px 1px 3px;
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.2);
     border-radius: 1em;
-    transition: all 0.5s;
+    transition: all 0.4s ease;
     text-align: center;
     background-color: rgba(255, 255, 255, 0.564);
     
 
     &:hover, 
     &:focus {
-        box-shadow: 4px 4px 6px;
-        transform: scale(0.5) skewX();
-        box-shadow: 0 7px 8px rgba(0,0,0, .05), 0 3 3px rgba(0,0,0, .01);
+        transform: scale(0.5) skewX() ;
+        box-shadow: 5px 5px 20px rgba(0,0,0, 0.4), 0 3 3px rgba(0,0,0, .01);
         background-color: rgba(0, 0, 0, 0.12);
     }
 
@@ -57,7 +56,7 @@
     
 
     &__image {
-        width: 100%;
+        width: 70%;
         height: 100%;
         object-fit: cover;
         transition: .2s;

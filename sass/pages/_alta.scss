@@ -1,0 +1,26 @@
+#alta-h1 {
+    color: #AAB2BD;
+    
+}
+
+.formulario-alta {
+
+    
+    display: flex;
+            flex-direction: column;
+            align-items: center;
+            flex-grow: 1;
+            gap: 2em;
+            margin-top: 3em;
+        }
+
+        .form-inputs {
+            width: 20em;
+            border-radius: 1em;
+    
+        }
+
+        .alta__form-button {
+        color:white;
+        border-radius: 2em;
+        cursor: pointer;}
