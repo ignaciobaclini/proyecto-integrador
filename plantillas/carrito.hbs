@@ -28,7 +28,7 @@
             {{/if}}
             
             <td>
-                <button onclick="carritoController.borrarProductoCarrito({{id}})">borrar</button>
+                <button onclick="carritoController.borrarProductoCarrito('{{id}}')">borrar</button>
             </td>
         </tr>
          {{/each}}
@@ -36,3 +36,4 @@
 {{else}}
     <h2>El carrito está vacío</h2>
 {{/if}}
+

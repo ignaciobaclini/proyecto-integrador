@@ -247,25 +247,3 @@ async function initAlta() {
   const productos = await productoController.obtenerProductos()
   renderTablaAlta(null, productos)
 }
-
-
-        
-        
-        
-        
-        
-        
-        
-       
-        
-        
-        
-        
-        
-        
-        
-     
-    
-
-
-
