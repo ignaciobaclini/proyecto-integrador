@@ -25,7 +25,7 @@ class FormularioAlta {
     this.button = document.querySelector("main form button")
 
     this.button.disabled = true
-    console.log(this.inputs)
+    //console.log(this.inputs) #TODO Borrar console.log
     this.inputs.forEach((input, index) => {
       if (input.type != "checkbox") {
         input.addEventListener("input", () => {
@@ -123,7 +123,6 @@ class FormularioAlta {
   // Mostrar u ocultar el mensaje
   setCustomValidityJS(mensaje, index) {
     let divs = document.querySelectorAll("form .mensaje-validacion")
-    console.log(divs)
     divs[index].innerHTML = mensaje
     divs[index].style.display = mensaje ? "block" : "none"
   }
@@ -137,7 +136,7 @@ class FormularioAlta {
       marca: this.inputs[3].value,
       categoria: this.inputs[4].value,
       detalles: this.inputs[5].value,
-      foto: this.imagenSubida ? `/uploads/${this.imagenSubida}`: '',
+      foto: this.imagenSubida ? `/uploads/${this.imagenSubida}`: '/uploads/sinimagen.jpg',
       envio: this.inputs[6].checked,
     }
   }
@@ -248,6 +247,7 @@ async function initAlta() {
   const productos = await productoController.obtenerProductos()
   renderTablaAlta(null, productos)
 }
+
 
         
         
