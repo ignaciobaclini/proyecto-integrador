@@ -26,6 +26,18 @@ function initNosotros() {
     <button class="boton2" type="submit">ver mas</button>
     </div>
 </div>
+
+<footer>
+        <h3>NUESTRAS REDES</h3>
+
+    <div>
+    <div class="redes" ><img src="../img/productos/iphone-11-pro.jpg" alt=""></div>
+    <div class="redes" ><img src="../img/productos/iphone-11-pro.jpg" alt=""></div>
+    
+
+    </div>
+   </footer>
+
     
     `
 }
